@@ -1,1 +1,54 @@
 <paste log output from Kubernetes-mediated prediction, here>
+kubectl run flaskappln --image=sampletest19/samplecontainerizedflaskapp:latest --port=80
+deployment.apps/flaskappln created
+
+kubectl get deployments              
+NAME         READY   UP-TO-DATE   AVAILABLE   AGE
+flask        0/1     1            0           160m
+flaskapp     0/1     1            0           169m
+flaskappln   1/1     1            1           10s
+
+kubectl describe deployments flaskappln
+Name:                   flaskappln
+Namespace:              default
+CreationTimestamp:      Thu, 21 May 2020 18:48:40 -0700
+Labels:                 run=flaskappln
+Annotations:            deployment.kubernetes.io/revision: 1
+Selector:               run=flaskappln
+Replicas:               1 desired | 1 updated | 1 total | 1 available | 0 unavailable
+StrategyType:           RollingUpdate
+MinReadySeconds:        0
+RollingUpdateStrategy:  25% max unavailable, 25% max surge
+Pod Template:
+  Labels:  run=flaskappln
+  Containers:
+   flaskappln:
+    Image:        sampletest19/samplecontainerizedflaskapp:latest
+    Port:         80/TCP
+    Host Port:    0/TCP
+    Environment:  <none>
+    Mounts:       <none>
+  Volumes:        <none>
+Conditions:
+  Type           Status  Reason
+  ----           ------  ------
+  Available      True    MinimumReplicasAvailable
+  Progressing    True    NewReplicaSetAvailable
+OldReplicaSets:  <none>
+NewReplicaSet:   flaskappln-54cd69c94c (1/1 replicas created)
+Events:
+  Type    Reason             Age   From                   Message
+  ----    ------             ----  ----                   -------
+  Normal  ScalingReplicaSet  31s   deployment-controller  Scaled up replica set flaskappln-54cd69c94c to 1
+
+kubectl get pods                     
+NAME                          READY   STATUS             RESTARTS   AGE
+flask-56f4cbc689-2r2m4        0/1     ImagePullBackOff   0          161m
+flaskapp-7dc765455f-cvd6f     0/1     ImagePullBackOff   0          170m
+flaskappln-54cd69c94c-bmvs7   1/1     Running            0          62s
+
+kubectl port-forward pods/flaskappln-54cd69c94c-bmvs7 8000:80
+Forwarding from 127.0.0.1:8000 -> 80
+Forwarding from [::1]:8000 -> 80
+Handling connection for 8000
+Handling connection for 8000
