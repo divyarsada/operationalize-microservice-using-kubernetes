@@ -3,7 +3,7 @@
 [![<ORG_NAME>](https://circleci.com/gh/divyarsada/operationalize-microservice-using-kubernetes.svg?style=shield)](https://app.circleci.com/pipelines/github/divyarsada/operationalize-microservice-using-kubernetes)
 
 ### Project Overview
-=============
+
 This project goal is to operationalize a Python flask app an app.py—that serves out predictions (inference) about housing prices through API calls using kubernetes, which is an open-source system for automating the management of containerized applications. This objective is achieved by completing the below tasks
     
 * Test the project code using linting
@@ -14,7 +14,6 @@ This project goal is to operationalize a Python flask app an app.py—that serve
 * Upload a complete Github repo with CircleCI to indicate the code has been tested
 		
 ### Steps to follow
-===============
 
 ##### Setup the Environment
 
