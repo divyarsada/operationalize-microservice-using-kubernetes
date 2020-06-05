@@ -1,6 +1,6 @@
 # operationalize-microservice-using-kubernetes
 
-[![<ORG_NAME>](https://circleci.com/gh/divyarsada/Operationalize-Python-flask-app.svg?style=shield)](https://app.circleci.com/pipelines/github/divyarsada/Operationalize-Python-flask-app/7/workflows/1e63a620-ad17-4cbc-97a1-27417bedcde4)
+[![<ORG_NAME>](https://circleci.com/gh/divyarsada/operationalize-microservice-using-kubernetes.svg?style=shield)](https://app.circleci.com/pipelines/github/divyarsada/operationalize-microservice-using-kubernetes)
 
 Project Overview
 ========
